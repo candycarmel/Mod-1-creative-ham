@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         
         if (HAMBURGER_MAX == hamburger.count)
         {
-            createAlert(alertName: "error")
+//            createAlert(alertName: "error")
             return
         }
         
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         if (!isGood)
         {
             
-            createAlert(alertName: "error")
+//            createAlert(alertName: "error")
             return
         }
         
@@ -91,7 +91,7 @@ class ViewController: UIViewController {
     @IBAction func condimentAction(_ sender: Any) {
         if (0 == hamburger.count)
         {
-            createAlert(alertName: "error")
+//            createAlert(alertName: "error")
             return
         }
         
@@ -107,7 +107,7 @@ class ViewController: UIViewController {
         if (!isGood)
         {
             
-            createAlert(alertName: "error")
+//            createAlert(alertName: "error")
             return
         }
         
@@ -206,8 +206,6 @@ class ViewController: UIViewController {
             self.view.addSubview(imageView)
             imageView.translatesAutoresizingMaskIntoConstraints = false
         
-        sleep(4)
-        imageView.image = nil
     }
 }
 
