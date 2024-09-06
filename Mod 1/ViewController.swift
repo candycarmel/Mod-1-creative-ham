@@ -29,12 +29,16 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var scoreTextOutlet: UILabel!
     
+    @IBOutlet weak var resetBurgerButtonOutlet: UIButton!
+    @IBOutlet weak var burgerScoreButtonOutlet: UIButton!
     @IBOutlet weak var ingredientOutlet: UITextField!
     
     @IBOutlet weak var condimentOutlet: UITextField!
     
     @IBOutlet weak var hintLabelOutlet: UILabel!
     override func viewDidLoad() {
+        resetBurgerButtonOutlet.layer.cornerRadius = 18;
+        burgerScoreButtonOutlet.layer.cornerRadius = 18;
         super.viewDidLoad()
         
         

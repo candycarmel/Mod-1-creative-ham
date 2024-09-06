@@ -112,9 +112,11 @@
                         <color key="backgroundColor" systemColor="systemYellowColor"/>
                     </view>
                     <connections>
+                        <outlet property="burgerScoreButtonOutlet" destination="SR4-eN-Rcr" id="acu-WD-mXq"/>
                         <outlet property="condimentOutlet" destination="C1B-Oc-Xnc" id="nFs-cg-4kP"/>
                         <outlet property="hintLabelOutlet" destination="OHR-zY-y3A" id="WNB-Pm-PkN"/>
                         <outlet property="ingredientOutlet" destination="MlS-5Q-rdy" id="RY5-WP-9HS"/>
+                        <outlet property="resetBurgerButtonOutlet" destination="IuK-MV-aTF" id="2nR-rl-Fue"/>
                         <outlet property="scoreTextOutlet" destination="l15-Rg-8W4" id="ZSz-cW-bkc"/>
                     </connections>
                 </viewController>
