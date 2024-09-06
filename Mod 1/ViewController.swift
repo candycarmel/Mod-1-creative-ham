@@ -11,7 +11,7 @@ class ViewController: UIViewController {
     
     var hamburger = [UIImageView]();
     var condiments = [UIImageView]();
-    let ingredientList = ["bun", "patty", "lettuce", "brick", "bacon", "bigmac", "onion", "spaghetti", "banana", "pickle"]
+    let ingredientList = ["bun", "patty", "lettuce", "brick", "bacon", "bigmac", "onion", "spaghetti", "banana", "pickle", "potato"]
     let condimentList = ["ketchup", "mustard", "bbqsauce", "mayo", "soysauce", "chocolatesyrup"]
     
     var fullBurger = [String]()
@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         
         if (HAMBURGER_MAX == hamburger.count)
         {
-            createAlert(alertName: "error")
+            createAlert(alertName: "Hamburger is full")
             return
         }
         
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         if (!isGood)
         {
             
-            createAlert(alertName: "error")
+            createAlert(alertName: "Bad input")
             return
         }
         
@@ -91,7 +91,7 @@ class ViewController: UIViewController {
     @IBAction func condimentAction(_ sender: Any) {
         if (0 == hamburger.count)
         {
-            createAlert(alertName: "error")
+            createAlert(alertName: "empty burger cannot have condiments")
             return
         }
         
@@ -107,7 +107,7 @@ class ViewController: UIViewController {
         if (!isGood)
         {
             
-            createAlert(alertName: "error")
+            createAlert(alertName: "Bad Input")
             return
         }
         
@@ -117,7 +117,7 @@ class ViewController: UIViewController {
         imageView  = UIImageView(frame:CGRect(x:screenWidth / 2 - 75, y:screenHeight / 2 + CGFloat((hamburger.count - 1) * -50), width:150, height:50));
             imageView.image = UIImage(named:output)
             self.view.addSubview(imageView)
-            imageView.translatesAutoresizingMaskIntoConstraints = false
+//            imageView.translatesAutoresizingMaskIntoConstraints = false
         
         condiments.append(imageView)
         fullBurger.append(output)
@@ -166,6 +166,8 @@ class ViewController: UIViewController {
                 
             case "banana": score += 100; break;
                 
+            case "potato": score += 2; break;
+                
             default: break;
             }
             
@@ -201,7 +203,7 @@ class ViewController: UIViewController {
     
     func createAlert(alertName: String)
     {
-        let alert = UIAlertController(title: "Error", message: "Bad Input", preferredStyle: UIAlertController.Style.alert)
+        let alert = UIAlertController(title: "Error", message: alertName, preferredStyle: UIAlertController.Style.alert)
         let alertAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
         
         alert.addAction(alertAction)
