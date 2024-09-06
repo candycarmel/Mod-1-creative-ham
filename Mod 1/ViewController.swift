@@ -45,7 +45,7 @@ class ViewController: UIViewController {
         
         if (HAMBURGER_MAX == hamburger.count)
         {
-//            createAlert(alertName: "error")
+            createAlert(alertName: "error")
             return
         }
         
@@ -61,7 +61,7 @@ class ViewController: UIViewController {
         if (!isGood)
         {
             
-//            createAlert(alertName: "error")
+            createAlert(alertName: "error")
             return
         }
         
@@ -84,14 +84,14 @@ class ViewController: UIViewController {
         imageView  = UIImageView(frame:CGRect(x:screenWidth / 2 - 75, y:screenHeight / 2 + CGFloat(hamburger.count * -50), width:150, height:50));
             imageView.image = UIImage(named:output)
             self.view.addSubview(imageView)
-            imageView.translatesAutoresizingMaskIntoConstraints = false
+//            imageView.translatesAutoresizingMaskIntoConstraints = false
         hamburger.append(imageView)
         fullBurger.append(output)
     }
     @IBAction func condimentAction(_ sender: Any) {
         if (0 == hamburger.count)
         {
-//            createAlert(alertName: "error")
+            createAlert(alertName: "error")
             return
         }
         
@@ -107,7 +107,7 @@ class ViewController: UIViewController {
         if (!isGood)
         {
             
-//            createAlert(alertName: "error")
+            createAlert(alertName: "error")
             return
         }
         
@@ -199,12 +199,14 @@ class ViewController: UIViewController {
         hintLabelOutlet.text = randomBool ? "ingredient: \(ingredientList[Int.random(in: 0..<ingredientList.count)])" : "condiment: \(condimentList[Int.random(in: 0..<condimentList.count)])"
     }
     
-    func createAlert(alertName: String) async
+    func createAlert(alertName: String)
     {
-        let imageView = UIImageView(frame:CGRect(x:screenWidth / 2, y:screenHeight / 2, width:250, height:150));
-            imageView.image = UIImage(named:alertName)
-            self.view.addSubview(imageView)
-            imageView.translatesAutoresizingMaskIntoConstraints = false
+        let alert = UIAlertController(title: "Error", message: "Bad Input", preferredStyle: UIAlertController.Style.alert)
+        let alertAction = UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler: nil)
+        
+        alert.addAction(alertAction)
+        
+        self.present(alert, animated: true)
         
     }
 }
